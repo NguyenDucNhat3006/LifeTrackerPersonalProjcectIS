@@ -16,7 +16,7 @@ const Dashboard = () => {
   const [showNotifications, setShowNotifications] = useState(false);
   const [now, setNow] = useState(new Date());
 
-  const API_BASE_URL = 'http://127.0.0.1:8080/is207_project/backend/api';
+  const API_BASE_URL = 'https://emotech.rf.gd/backend/api';
 
   const last7Days = useMemo(() => {
     return Array.from({ length: 7 }).map((_, i) => {

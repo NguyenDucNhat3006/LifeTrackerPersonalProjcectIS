@@ -21,7 +21,7 @@ const Calendar = () => {
   const [newEvent, setNewEvent] = useState({ title: '', date: '', startTime: '', endTime: '', color: '#3b82f6' });
 
   const fileInputRef = useRef(null);
-  const API_BASE_URL = 'http://127.0.0.1:8080/is207_project/backend/api';
+  const API_BASE_URL = 'https://emotech.rf.gd/backend/api';
 
   const todayFormat = new Date().toLocaleDateString('vi-VN', { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' });
   const weekDays = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'CN'];

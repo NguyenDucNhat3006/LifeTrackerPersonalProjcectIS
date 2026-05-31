@@ -26,7 +26,7 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [isExporting, setIsExporting] = useState(false);
 
-  const API_BASE_URL = 'http://127.0.0.1:8080/is207_project/backend/api';
+  const API_BASE_URL = 'https://emotech.rf.gd/backend/api';
 
   useEffect(() => {
     const fetchAdminData = async () => {

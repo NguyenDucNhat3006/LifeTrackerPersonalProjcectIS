@@ -97,7 +97,7 @@ const HabitTracker = () => {
         if (!user) return;
         try {
             const response = await axios.get(
-                `http://127.0.0.1:8080/is207_project/backend/api/habits/read_data.php`,
+                `https://emotech.rf.gd/backend/api/habits/read_data.php`,
                 { params: { user_id: user.id } }
             );
             const data = Array.isArray(response.data) ? response.data : [];
@@ -116,7 +116,7 @@ const HabitTracker = () => {
         e.preventDefault();
         if (!newHabitTitle.trim()) return;
         try {
-            await axios.post('http://127.0.0.1:8080/is207_project/backend/api/habits/create.php', {
+            await axios.post('https://emotech.rf.gd/backend/api/habits/create.php', {
                 user_id: user.id, title: newHabitTitle, weekly_goal: 7
             });
             setNewHabitTitle('');
@@ -148,7 +148,7 @@ const HabitTracker = () => {
         }));
 
         try {
-            await axios.post('http://127.0.0.1:8080/is207_project/backend/api/habits/toggle.php', {
+            await axios.post('https://emotech.rf.gd/backend/api/habits/toggle.php', {
                 user_id: user.id, habit_id: habitId, date: dateStr
             });
             fetchHabitsData();

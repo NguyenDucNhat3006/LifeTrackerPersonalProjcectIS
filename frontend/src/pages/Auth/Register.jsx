@@ -32,7 +32,7 @@ const Register = () => {
         setMessage({ type: '', text: '' }); 
 
         try {
-            const response = await axios.post('http://127.0.0.1:8080/is207_project/backend/api/users/register.php', formData);
+            const response = await axios.post('https://emotech.rf.gd/backend/api/users/register.php', formData);
             setMessage({ type: 'success', text: response.data.message });
             setFormData({ username: '', email: '', password: '' });
             setTimeout(() => { navigate('/login'); }, 1500); // Đăng ký xong chuyển sang trang đăng nhập
