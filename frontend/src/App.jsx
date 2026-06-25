@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
-import Login from './pages/Auth/login';
+import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import ProtectedRoute from './components/ProtectedRoute';
 import MainLayout from './components/MainLayout';
@@ -18,14 +18,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* CÁC TRANG PUBLIC (Không cần bảo vệ) */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<LandingPage />} />
 
-        {/* ==============================================
-            KHU VỰC DÀNH RIÊNG CHO NGƯỜI DÙNG (USER) 
-        =============================================== */}
+        {/* KHU VỰC DÀNH RIÊNG CHO NGƯỜI DÙNG (USER)  */}
         <Route element={<ProtectedRoute allowedRole="user"><MainLayout /></ProtectedRoute>}>
           <Route path="/app" element={<Dashboard />} />
           <Route path="/todo" element={<TodoList />} />
@@ -36,19 +33,17 @@ function App() {
           <Route path="/settings" element={<Settings />} />
         </Route>
 
-        {/* ==============================================
-            KHU VỰC DÀNH RIÊNG CHO QUẢN TRỊ VIÊN (ADMIN) 
-        =============================================== */}
+        {/* KHU VỰC DÀNH RIÊNG CHO QUẢN TRỊ VIÊN (ADMIN)  */}
         <Route path="/admin" element={
-            <ProtectedRoute allowedRole="admin">
-                <AdminDashboard />
-            </ProtectedRoute>
+          <ProtectedRoute allowedRole="admin">
+            <AdminDashboard />
+          </ProtectedRoute>
         } />
-        
+
         <Route path="/admin/users" element={
-            <ProtectedRoute allowedRole="admin">
-                <UserManagement />
-            </ProtectedRoute>
+          <ProtectedRoute allowedRole="admin">
+            <UserManagement />
+          </ProtectedRoute>
         } />
 
       </Routes>

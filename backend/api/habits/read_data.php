@@ -64,7 +64,7 @@ try {
         $streak = 0;
         $current_check_date = null;
 
-        // 🔥 Tìm xem hôm nay hoặc hôm qua có check-in không để tính streak
+        //  Tìm xem hôm nay hoặc hôm qua có check-in không để tính streak
         if (in_array($today_str, $dates)) {
             $current_check_date = strtotime($today_str);
         } elseif (in_array($yesterday_str, $dates)) {

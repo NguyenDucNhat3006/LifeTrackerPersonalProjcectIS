@@ -48,7 +48,7 @@ const Settings = () => {
     if (avatarFile) submitData.append('avatar', avatarFile);
 
     try {
-      const response = await axios.post('https://emotech.rf.gd/backend/api/users/update_profile.php', submitData, {
+      const response = await axios.post('http://127.0.0.1:8080/is207_project/backend/api/users/update_profile.php', submitData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 

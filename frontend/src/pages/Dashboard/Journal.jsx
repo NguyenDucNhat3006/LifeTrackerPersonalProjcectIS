@@ -15,7 +15,7 @@ const Journal = () => {
     const [editTitle, setEditTitle] = useState('');
     const [editContent, setEditContent] = useState('');
 
-    const API_BASE_URL = 'https://emotech.rf.gd/backend/api';
+    const API_BASE_URL = 'http://127.0.0.1:8080/is207_project/backend/api';
     const todayFormat = new Date().toLocaleDateString('vi-VN', { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' });
 
     // Định dạng ngày hiển thị (VD: Thứ 3, 05/05)
